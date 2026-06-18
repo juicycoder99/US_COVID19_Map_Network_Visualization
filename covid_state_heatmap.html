@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e37f5bd09ec9f8b4a217834ae60375a2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e37f5bd09ec9f8b4a217834ae60375a2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e37f5bd09ec9f8b4a217834ae60375a2 = L.map(
+                "map_e37f5bd09ec9f8b4a217834ae60375a2",
+                {
+                    center: [39.5, -98.35],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9ba2a7fd2fa738b7cf5a466e8594ff51 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9ba2a7fd2fa738b7cf5a466e8594ff51.addTo(map_e37f5bd09ec9f8b4a217834ae60375a2);
+        
+    
+            var heat_map_467a2689b847ecde8eff87d1c801aa4a = L.heatLayer(
+                [[36.116203, -119.681564, 1.0], [31.054487, -97.563461, 0.9930491495705973], [27.766279, -81.686783, 0.7814718440674685], [40.349457, -88.986137, 0.5862159334993615], [42.165726, -74.948051, 0.5218364361256603], [33.040619, -83.643074, 0.3582085329580946], [40.388783, -82.764915, 0.34801380342405325], [44.268543, -89.616508, 0.3260400031269893], [43.326618, -84.536095, 0.3169992815369897], [40.590752, -77.209755, 0.30978859318986407], [35.747845, -86.692345, 0.2894810314597456], [35.630066, -79.806419, 0.28944008279076344], [39.849426, -86.258278, 0.281274173674473], [40.298904, -74.521011, 0.27087321175301254], [33.729759, -111.431221, 0.26891214276939573], [45.694454, -93.900192, 0.25711296993250915], [38.456085, -92.288368, 0.24918232953255234], [32.806671, -86.79113, 0.19922569789561068], [39.059811, -105.311104, 0.19224655565854767], [42.230171, -71.530106, 0.18763201292488899], [37.769337, -78.169968, 0.18700512602883532], [31.169546, -91.867805, 0.18402853005446174], [42.011539, -93.210526, 0.1812053054584576], [33.856892, -80.945007, 0.17067032971123744], [35.565342, -96.928917, 0.15876543485625155], [40.150032, -111.862434, 0.15849145103469842], [39.063946, -76.802101, 0.15824426997829721], [37.66814, -84.670067, 0.1505429421246403], [47.400902, -121.490494, 0.13705072795565632], [38.5266, -96.726486, 0.12777920477684837], [34.969704, -92.373123, 0.12610849908237756], [38.313515, -117.055374, 0.12372975367514304], [32.741646, -89.678696, 0.12187142862460866], [41.12537, -98.268082, 0.10316682115482692], [41.597782, -72.755371, 0.09508653198277178], [44.240459, -114.478828, 0.08188765918795067], [34.840515, -106.248482, 0.07962059196884923], [18.220833, -66.590149, 0.06637183624999535], [44.299782, -99.438828, 0.0635523342602623], [44.572021, -122.070938, 0.06197692728633171], [47.528912, -99.784012, 0.06143044868573386], [46.921925, -110.454353, 0.04995141998816211], [41.680893, -71.51178, 0.04626231717349951], [38.491226, -80.954453, 0.03988698167360933], [39.318523, -75.507141, 0.02910780295500486], [61.370716, -152.404419, 0.026864560416038477], [42.755966, -107.30249, 0.026759582919193385], [43.452492, -71.563896, 0.017971254034374547], [38.897438, -77.026817, 0.01702869012653139], [21.094318, -157.498337, 0.013761730863011811], [44.693947, -69.381927, 0.009773330504152567], [13.444304, 144.793732, 0.005915965886036131], [44.045876, -72.710686, 0.0036436870181551506], [18.335765, -64.896335, 0.0012009127830576744], [15.0979, 145.6739, 8.040829545581452e-05]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 5,
+  "radius": 35,
+  "blur": 25,
+}
+            );
+        
+    
+            heat_map_467a2689b847ecde8eff87d1c801aa4a.addTo(map_e37f5bd09ec9f8b4a217834ae60375a2);
+        
+</script>
+</html>
