@@ -1,6 +1,6 @@
-# CS503 — Data Visualization — HW4
+# US COVID-19 Map and Network Visualization
 
-Coursework for **Data Visualization (CS503)**, Department of Computer Science, Bishop's University.
+Geographic heatmap and state-similarity network analysis of US COVID-19 case data, testing whether spatial proximity predicts case counts.
 
 ## Map, network and data visualization of US COVID-19
 
@@ -8,7 +8,7 @@ Coursework for **Data Visualization (CS503)**, Department of Computer Science, B
 reported. This project tests that hypothesis with a state-similarity network, community detection,
 and a geographic heatmap.
 
-The solution is in [`HW4.ipynb`](HW4.ipynb).
+The implementation is in [`covid19_map_network_visualization.ipynb`](covid19_map_network_visualization.ipynb).
 
 ## What the notebook covers
 
@@ -17,7 +17,7 @@ The solution is in [`HW4.ipynb`](HW4.ipynb).
 2. Save those totals to [`state_covid_totals.csv`](state_covid_totals.csv).
 3. Build an **affinity matrix** `A` from each state's `[TNC, TND]` vector using a Gaussian kernel
    with free parameter σ.
-4. Threshold it into an **adjacency matrix** `B` (`A ≥ 0.5`).
+4. Threshold it into an **adjacency matrix** `B` (`A >= 0.5`).
 5. Build the graph with **NetworkX**.
 6. Draw it with nodes labelled by state initials.
 7. Detect **communities** (Louvain) and visualize the clusters.
@@ -34,7 +34,7 @@ often fall in different communities while distant states share one, and the larg
 The evidence does not support the hypothesis; population size explains the case counts far better
 than spatial distance.
 
-## Note on Task 9 (Gephi)
+## Note on Gephi
 
 Gephi is a desktop application and is used outside the notebook. The notebook exports the graph as
 `covid_state_graph.gexf` so it can be loaded directly into Gephi for layout and modularity-based
@@ -44,16 +44,16 @@ community detection.
 
 ```bash
 pip install numpy pandas matplotlib networkx scikit-learn folium
-jupyter notebook HW4.ipynb
+jupyter notebook covid19_map_network_visualization.ipynb
 ```
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `HW4.ipynb` | Full solution (Tasks 1–10) |
-| `HW4.pdf` | Assignment description |
+| `covid19_map_network_visualization.ipynb` | Full implementation and analysis (Tasks 1–10) |
+| `PROJECT_BRIEF.pdf` | Project brief (goals, objectives, outcomes) |
 | `us_counties_covid19_daily.csv` | Source dataset (daily county-level COVID-19 counts) |
 | `state_covid_totals.csv` | Computed per-state TNC and TND (Task 2 output) |
-| `covid_state_graph.gexf`, `gephi_nodes.csv` | Graph exports for Gephi (Task 9) |
+| `covid_state_graph.gexf`, `gephi_nodes.csv` | Graph exports for Gephi |
 | `covid_state_heatmap.html` | Geographic heatmap (Task 10 output) |
